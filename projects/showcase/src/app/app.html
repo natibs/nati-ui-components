@@ -86,15 +86,13 @@
           [class.natiUiSpinnerCheckDone]="serverDemoStatus() === 'done'"
         >
           <svg class="natiUiSpinnerCheckSvg" viewBox="0 0 64 64">
-            <circle
+            <path
               class="natiUiSpinnerCheckRing"
-              cx="32"
-              cy="32"
-              r="26"
+              d="M20.69 43.31 A16 16 0 1 1 43.31 20.69 A16 16 0 1 1 20.69 43.31"
               pathLength="1"
               (animationiteration)="onSpinCycleEnd()"
             />
-            <path class="natiUiSpinnerCheckMark" d="M19 33 L28 43 L46 21" pathLength="1" />
+            <path class="natiUiSpinnerCheckMark" d="M20.69 43.31 L28 49 L47 23" pathLength="1" />
           </svg>
         </div>
         <p>{{ serverDemoStatus() === 'loading' ? 'Setting things up…' : 'All set!' }}</p>
