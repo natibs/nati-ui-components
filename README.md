@@ -38,6 +38,17 @@ Components (bring their own template/markup):
   (via the component's `open()` / `close()` methods) and light-dismisses
   via the `closedby="any"` attribute — no custom focus trap, no backdrop
   `<div>`, no `display: none` toggling.
+- `<nati-ui-datepicker>` — `ControlValueAccessor` date field with `single`
+  and `range` (from/to) modes, `min`/`max` bounds, and label/error handling
+  identical to the input directives. The floating calendar panel is a
+  native `popover="auto"` element, so light-dismiss and top-layer stacking
+  come from the browser, not JS.
+- `<nati-ui-toast>` — a toast/snackbar stack driven by the injectable
+  `NatiUiToastService` (`success()` / `danger()` / `warning()` / `info()`,
+  or `show(message, type, duration)`). Mount one `<nati-ui-toast />` near
+  your app root — it relocates itself to `document.body` so it always
+  renders above everything else. `duration: 0` makes a toast sticky with a
+  manual close button.
 
 ## Styling
 
@@ -66,17 +77,39 @@ e.g. `var(--nati-ui-color-basic-500)`, `var(--nati-ui-color-danger-700)`,
 ## Using it in another project
 
 This is a standard Angular CLI workspace with a publishable library
-(`ng-packagr`) at `projects/ui-components`. To use it elsewhere:
+(`ng-packagr`) at `projects/ui-components`. There are a few ways to
+consume the built output in `dist/ui-components` from elsewhere:
+
+**Local dev loop (`npm link`)** — best when the other project also lives
+on this machine and you want changes to show up without republishing:
 
 ```bash
-ng build ui-components
+npm run link:lib          # builds the lib and registers it as a global npm link
+
+cd ../other-project
+npm link ui-components    # symlinks node_modules/ui-components -> this repo's dist/ui-components
 ```
 
-Then either `npm pack`/`npm publish` the contents of `dist/ui-components`,
-or point another project's `package.json` at this repo
-(`"ui-components": "file:../ui-components/dist/ui-components"`, or a Git
-URL). Import components/directives from `'ui-components'`, and add the
-stylesheet once in your app's global styles:
+After editing the library, just re-run `npm run link:lib` (or
+`npm run build:lib` if the link is already registered) and the consuming
+project picks up the new build immediately — no reinstall needed. Run
+`npm unlink ui-components` in the consuming project (and `npm unlink -g
+ui-components` here) to undo.
+
+**One-off / no symlinks (`file:` dependency)** — point another project's
+`package.json` at this repo:
+`"ui-components": "file:../ui-components/dist/ui-components"`, then
+`npm install` there. Requires a manual reinstall whenever the library
+changes.
+
+**Published package** — `npm pack` or `npm publish` the contents of
+`dist/ui-components` to a registry (npm, GitHub Packages, a private
+registry) and depend on it like any other package. Best once "other
+projects" aren't all local or you want real versioning.
+
+Whichever route you use, import components/directives from
+`'ui-components'`, and add the stylesheet once in your app's global
+styles:
 
 ```ts
 import { NatiUiInputDirective, NatiUiModalComponent } from 'ui-components';

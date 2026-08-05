@@ -1,0 +1,107 @@
+.natiUiToastHost {
+  position: fixed;
+  bottom: var(--nati-ui-space-6);
+  left: 50%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nati-ui-space-2);
+  align-items: center;
+  max-width: calc(100vw - 2 * var(--nati-ui-space-4));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.natiUiToast {
+  display: flex;
+  align-items: center;
+  gap: var(--nati-ui-space-2);
+  padding: var(--nati-ui-space-3) var(--nati-ui-space-4);
+  font-family: var(--nati-ui-font-family);
+  font-size: var(--nati-ui-font-size-sm);
+  color: var(--nati-ui-color-neutral-0);
+  pointer-events: auto;
+  background: var(--nati-ui-color-neutral-800);
+  border-radius: var(--nati-ui-radius-md);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  animation: natiUiToastPopIn var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+}
+
+.natiUiToastLeaving {
+  animation: natiUiToastFadeOut 180ms var(--nati-ui-easing-standard) forwards;
+}
+
+.natiUiToastIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--nati-ui-color-neutral-0);
+}
+
+.natiUiToastSuccess .natiUiToastIcon {
+  color: var(--nati-ui-color-success-500);
+}
+
+.natiUiToastDanger .natiUiToastIcon {
+  color: var(--nati-ui-color-danger-300);
+}
+
+.natiUiToastWarning .natiUiToastIcon {
+  color: var(--nati-ui-color-warning-500);
+}
+
+.natiUiToastInfo .natiUiToastIcon {
+  color: var(--nati-ui-color-info-500);
+}
+
+.natiUiToastMessage {
+  flex: 1;
+  min-width: 0;
+}
+
+.natiUiToastClose {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  color: var(--nati-ui-color-neutral-0);
+  background: transparent;
+  border: none;
+  border-radius: var(--nati-ui-radius-full);
+  cursor: pointer;
+  opacity: 0.7;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  &:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-color-neutral-0) 40%, transparent);
+  }
+}
+
+@keyframes natiUiToastPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+}
+
+@keyframes natiUiToastFadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+}

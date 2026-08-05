@@ -10,6 +10,7 @@
     "storybook": "ng run showcase:storybook",
     "build-storybook": "ng run showcase:build-storybook",
     "build:lib": "ng build ui-components",
+    "link:lib": "ng build ui-components && cd dist/ui-components && npm link",
     "lint": "ng lint"
   },
   "private": true,

@@ -1,0 +1,330 @@
+.natiUiDatepicker {
+  position: relative;
+  font-family: var(--nati-ui-font-family);
+}
+
+.natiUiDatepickerTrigger {
+  display: flex;
+  align-items: center;
+  gap: var(--nati-ui-space-2);
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--nati-ui-control-height-md);
+  padding: 0 var(--nati-ui-control-padding-x-md);
+  background: var(--nati-ui-color-neutral-0);
+  border: 1px solid var(--nati-ui-color-neutral-300);
+  border-radius: var(--nati-ui-radius-md);
+  transition:
+    border-color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard),
+    box-shadow var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+
+  &:hover {
+    border-color: var(--nati-ui-color-neutral-400);
+  }
+
+  &:has(.natiUiDatepickerTriggerBtn:focus-visible) {
+    border-color: var(--nati-ui-focus-ring-color);
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-focus-ring-color) 25%, transparent);
+  }
+}
+
+.natiUiDatepickerSm .natiUiDatepickerTrigger {
+  height: var(--nati-ui-control-height-sm);
+  padding: 0 var(--nati-ui-control-padding-x-sm);
+  border-radius: var(--nati-ui-radius-sm);
+}
+
+.natiUiDatepickerError .natiUiDatepickerTrigger {
+  border-color: var(--nati-ui-color-danger-500);
+
+  &:has(.natiUiDatepickerTriggerBtn:focus-visible) {
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-focus-ring-color-danger) 25%, transparent);
+  }
+}
+
+.natiUiDatepickerDisabled .natiUiDatepickerTrigger {
+  color: var(--nati-ui-color-neutral-400);
+  background: var(--nati-ui-color-neutral-100);
+}
+
+.natiUiDatepickerIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--nati-ui-color-neutral-500);
+}
+
+.natiUiDatepickerTriggerBtn {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  font: inherit;
+  font-size: var(--nati-ui-font-size-md);
+  color: var(--nati-ui-color-neutral-900);
+  text-align: left;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.natiUiDatepickerSm .natiUiDatepickerTriggerBtn {
+  font-size: var(--nati-ui-font-size-sm);
+}
+
+.natiUiDatepickerValue {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.natiUiDatepickerPlaceholder {
+  color: var(--nati-ui-color-neutral-400);
+}
+
+.natiUiDatepickerClear {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  color: var(--nati-ui-color-neutral-500);
+  background: transparent;
+  border: none;
+  border-radius: var(--nati-ui-radius-full);
+  cursor: pointer;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  &:hover {
+    color: var(--nati-ui-color-neutral-900);
+    background: var(--nati-ui-color-neutral-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-focus-ring-color) 30%, transparent);
+  }
+}
+
+.natiUiDatepickerPanel {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: var(--nati-ui-space-4);
+  color: var(--nati-ui-color-neutral-900);
+  background: var(--nati-ui-color-neutral-0);
+  border: none;
+  border-radius: var(--nati-ui-radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 16px);
+  overflow: auto;
+
+  &:popover-open {
+    animation: natiUiDatepickerPopIn var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+  }
+
+  &::backdrop {
+    background: transparent;
+  }
+}
+
+.natiUiDatepickerMonths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nati-ui-space-5);
+}
+
+.natiUiDatepickerMonth {
+  min-width: 252px;
+}
+
+.natiUiDatepickerMonthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--nati-ui-space-3);
+}
+
+.natiUiDatepickerMonthLabel {
+  font-size: var(--nati-ui-font-size-sm);
+  font-weight: var(--nati-ui-font-weight-semibold);
+}
+
+.natiUiDatepickerNav,
+.natiUiDatepickerNavSpacer {
+  width: 28px;
+  height: 28px;
+}
+
+.natiUiDatepickerNav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--nati-ui-color-neutral-600);
+  background: transparent;
+  border: none;
+  border-radius: var(--nati-ui-radius-sm);
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    color: var(--nati-ui-color-neutral-900);
+    background: var(--nati-ui-color-neutral-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-focus-ring-color) 30%, transparent);
+  }
+}
+
+.natiUiDatepickerWeekdays,
+.natiUiDatepickerGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.natiUiDatepickerWeekdays {
+  margin-bottom: var(--nati-ui-space-1);
+
+  span {
+    display: block;
+    padding: var(--nati-ui-space-1) 0;
+    font-size: var(--nati-ui-font-size-xs);
+    font-weight: var(--nati-ui-font-weight-medium);
+    color: var(--nati-ui-color-neutral-500);
+    text-align: center;
+  }
+}
+
+.natiUiDatepickerDayCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0;
+}
+
+.natiUiDatepickerDayCellInRange {
+  background: color-mix(in srgb, var(--nati-ui-color-basic-fill) 14%, transparent);
+}
+
+.natiUiDatepickerDayCellRangeStart {
+  border-radius: var(--nati-ui-radius-full) 0 0 var(--nati-ui-radius-full);
+}
+
+.natiUiDatepickerDayCellRangeEnd {
+  border-radius: 0 var(--nati-ui-radius-full) var(--nati-ui-radius-full) 0;
+}
+
+.natiUiDatepickerDayCellRangeStart.natiUiDatepickerDayCellRangeEnd {
+  border-radius: var(--nati-ui-radius-full);
+}
+
+.natiUiDatepickerDay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: var(--nati-ui-font-size-sm);
+  color: var(--nati-ui-color-neutral-900);
+  background: transparent;
+  border: none;
+  border-radius: var(--nati-ui-radius-full);
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background: var(--nati-ui-color-neutral-100);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px
+      color-mix(in srgb, var(--nati-ui-focus-ring-color) 40%, transparent);
+  }
+
+  &:disabled {
+    color: var(--nati-ui-color-neutral-300);
+    cursor: not-allowed;
+  }
+}
+
+.natiUiDatepickerDayOutside {
+  color: var(--nati-ui-color-neutral-300);
+}
+
+.natiUiDatepickerDayToday {
+  font-weight: var(--nati-ui-font-weight-bold);
+}
+
+.natiUiDatepickerDaySelected {
+  color: var(--nati-ui-color-basic-on-fill);
+  background: var(--nati-ui-color-basic-fill);
+
+  &:hover:not(:disabled) {
+    background: var(--nati-ui-color-basic-fill);
+  }
+}
+
+.natiUiDatepickerFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--nati-ui-space-2);
+  padding-top: var(--nati-ui-space-3);
+  margin-top: var(--nati-ui-space-3);
+  border-top: 1px solid var(--nati-ui-color-neutral-100);
+}
+
+.natiUiDatepickerFooterBtn {
+  padding: var(--nati-ui-space-2) var(--nati-ui-space-3);
+  font-size: var(--nati-ui-font-size-sm);
+  font-weight: var(--nati-ui-font-weight-medium);
+  color: var(--nati-ui-color-neutral-600);
+  background: transparent;
+  border: none;
+  border-radius: var(--nati-ui-radius-sm);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--nati-ui-color-neutral-100);
+  }
+}
+
+.natiUiDatepickerFooterBtnPrimary {
+  color: var(--nati-ui-color-basic-on-fill);
+  background: var(--nati-ui-color-basic-fill);
+
+  &:hover {
+    background: var(--nati-ui-color-basic-fill);
+    opacity: 0.9;
+  }
+}
+
+@keyframes natiUiDatepickerPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
