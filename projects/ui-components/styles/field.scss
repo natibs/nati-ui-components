@@ -1,0 +1,23 @@
+.natiUiField {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--nati-ui-space-1);
+  font-family: var(--nati-ui-font-family);
+}
+
+.natiUiFieldLabel {
+  font-size: var(--nati-ui-font-size-sm);
+  font-weight: var(--nati-ui-font-weight-medium);
+  color: var(--nati-ui-color-neutral-700);
+}
+
+.natiUiFieldRequiredMark {
+  color: var(--nati-ui-color-danger-500);
+}
+
+.natiUiFieldError {
+  min-height: 1.1em;
+  margin: 0;
+  font-size: var(--nati-ui-font-size-xs);
+  color: var(--nati-ui-color-danger-500);
+}

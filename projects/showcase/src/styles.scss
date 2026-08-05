@@ -1,0 +1,16 @@
+// ui-components' design tokens + component styles are already included via
+// the "styles" array in angular.json (projects/ui-components/styles.scss).
+// This file only holds page-level resets for the showcase app itself.
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--nati-ui-font-family);
+  color: var(--nati-ui-color-neutral-900);
+  background: var(--nati-ui-color-neutral-50);
+  transition:
+    background-color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard),
+    color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+}

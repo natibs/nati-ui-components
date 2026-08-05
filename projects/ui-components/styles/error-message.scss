@@ -1,0 +1,26 @@
+.natiUiErrorMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nati-ui-space-2);
+  font-family: var(--nati-ui-font-family);
+  font-size: var(--nati-ui-font-size-sm);
+  color: var(--nati-ui-color-danger-500);
+}
+
+.natiUiErrorMessageBanner {
+  padding: var(--nati-ui-space-3) var(--nati-ui-space-4);
+  background: var(--nati-ui-color-danger-50);
+  border: 1px solid color-mix(in srgb, var(--nati-ui-color-danger-500) 30%, transparent);
+  border-radius: var(--nati-ui-radius-md);
+}
+
+.natiUiErrorMessageIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.natiUiErrorMessageText {
+  line-height: var(--nati-ui-line-height-md);
+}

@@ -1,0 +1,109 @@
+<main class="showcase">
+  <header class="showcaseIntro">
+    <div class="showcaseIntroTop">
+      <h1 natiUiHeading>nati-ui-components</h1>
+      <button natiUiButton variant="outline" size="sm" (click)="toggleTheme()">
+        {{ theme() === 'dark' ? 'Light mode' : 'Dark mode' }}
+      </button>
+    </div>
+    <p>
+      A small, Angular 22 + Storybook component foundation: input, textarea,
+      checkbox, radio, headings, buttons, error messages, and a modal built
+      on the native <code>&lt;dialog&gt;</code> element. This page is a live
+      showcase; run <code>npm run storybook</code> for the full docs and
+      controls.
+    </p>
+  </header>
+
+  <section class="showcaseSection">
+    <h2 natiUiHeading size="h3">Buttons</h2>
+    <div class="showcaseRow">
+      <button natiUiButton variant="primary">Primary</button>
+      <button natiUiButton variant="secondary">Secondary</button>
+      <button natiUiButton variant="outline">Outline</button>
+      <button natiUiButton variant="danger">Danger</button>
+      <button natiUiButton variant="ghost">Ghost</button>
+      <button natiUiButton [loading]="true">Loading</button>
+    </div>
+  </section>
+
+  <section class="showcaseSection">
+    <h2 natiUiHeading size="h3">Form fields</h2>
+    <div class="showcaseGrid">
+      <input natiUiInput label="Full name" placeholder="Jane Doe" />
+      <input natiUiInput label="Email" type="email" required placeholder="jane@example.com" />
+      <textarea natiUiTextarea label="Notes" rows="3" placeholder="Anything else?"></textarea>
+    </div>
+  </section>
+
+  <section class="showcaseSection">
+    <h2 natiUiHeading size="h3">Checkbox &amp; radio</h2>
+    <div class="showcaseGrid">
+      <nati-ui-checkbox
+        label="I accept the terms and conditions"
+        [(ngModel)]="acceptedTerms"
+      />
+      <nati-ui-radio-group label="Plan" [(ngModel)]="plan">
+        <nati-ui-radio value="free" label="Free" description="Good for trying things out" />
+        <nati-ui-radio value="pro" label="Pro" description="For growing teams" />
+      </nati-ui-radio-group>
+    </div>
+  </section>
+
+  <section class="showcaseSection">
+    <h2 natiUiHeading size="h3">Error message</h2>
+    <nati-ui-error-message variant="banner">
+      This is a page-level error banner, independent of any single field.
+    </nati-ui-error-message>
+  </section>
+
+  <section class="showcaseSection">
+    <h2 natiUiHeading size="h3">Modal</h2>
+    <button natiUiButton (click)="demoModal.open()">Open modal</button>
+    <nati-ui-modal #demoModal title="Invite a teammate">
+      <p>Enter an email address to send an invite.</p>
+      <input natiUiInput placeholder="jane@example.com" style="width: 100%; margin-top: 8px;" />
+      <div modal-footer>
+        <button natiUiButton variant="ghost" (click)="demoModal.close()">Cancel</button>
+        <button natiUiButton (click)="demoModal.close({ sent: true })">Send invite</button>
+      </div>
+    </nati-ui-modal>
+
+    <button natiUiButton variant="outline" (click)="serverModal.open(); startServerDemo()">
+      Simulate server request
+    </button>
+    <nati-ui-modal
+      #serverModal
+      title="Provisioning your workspace"
+      [showCloseButton]="false"
+      [dismissible]="serverDemoShowClose()"
+      (closed)="clearServerDemoTimers()"
+    >
+      <div class="serverDemoBody">
+        <div
+          class="natiUiSpinnerCheck"
+          [class.natiUiSpinnerCheckSpinning]="serverDemoStatus() === 'loading'"
+          [class.natiUiSpinnerCheckDone]="serverDemoStatus() === 'done'"
+        >
+          <svg class="natiUiSpinnerCheckSvg" viewBox="0 0 64 64">
+            <circle
+              class="natiUiSpinnerCheckRing"
+              cx="32"
+              cy="32"
+              r="26"
+              pathLength="1"
+              (animationiteration)="onSpinCycleEnd()"
+            />
+            <path class="natiUiSpinnerCheckMark" d="M19 33 L28 43 L46 21" pathLength="1" />
+          </svg>
+        </div>
+        <p>{{ serverDemoStatus() === 'loading' ? 'Setting things up…' : 'All set!' }}</p>
+      </div>
+      <div modal-footer>
+        <button natiUiButton [disabled]="!serverDemoShowClose()" (click)="serverModal.close()">
+          Close
+        </button>
+      </div>
+    </nati-ui-modal>
+  </section>
+</main>

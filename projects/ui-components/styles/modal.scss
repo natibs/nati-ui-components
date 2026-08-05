@@ -1,0 +1,118 @@
+.natiUiModal {
+  padding: 0;
+  border: none;
+  border-radius: var(--nati-ui-radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  font-family: var(--nati-ui-font-family);
+  color: var(--nati-ui-color-neutral-900);
+  background: var(--nati-ui-color-neutral-0);
+  width: min(560px, calc(100vw - 2 * var(--nati-ui-space-4)));
+
+  &::backdrop {
+    background: rgba(17, 24, 39, 0.5);
+    animation: natiUiModalFadeIn var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+  }
+
+  &[open] {
+    animation: natiUiModalPopIn 160ms var(--nati-ui-easing-standard);
+  }
+
+  &.natiUiModalSm {
+    width: min(400px, calc(100vw - 2 * var(--nati-ui-space-4)));
+  }
+
+  &.natiUiModalLg {
+    width: min(760px, calc(100vw - 2 * var(--nati-ui-space-4)));
+  }
+
+  &.natiUiModalFullscreen {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.natiUiModalPanel {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+
+.natiUiModalFullscreen .natiUiModalPanel {
+  max-height: 100vh;
+  height: 100%;
+}
+
+.natiUiModalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--nati-ui-space-4);
+  padding: var(--nati-ui-space-5) var(--nati-ui-space-5) 0;
+}
+
+.natiUiModalTitle {
+  margin: 0;
+  font-size: var(--nati-ui-heading-h4-size);
+  font-weight: var(--nati-ui-heading-font-weight);
+}
+
+.natiUiModalClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: var(--nati-ui-color-neutral-500);
+  background: transparent;
+  border: none;
+  border-radius: var(--nati-ui-radius-sm);
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: var(--nati-ui-color-neutral-100);
+    color: var(--nati-ui-color-neutral-900);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-focus-ring-color) 30%, transparent);
+  }
+}
+
+.natiUiModalBody {
+  flex: 1;
+  padding: var(--nati-ui-space-5);
+  overflow-y: auto;
+  font-size: var(--nati-ui-font-size-md);
+  line-height: var(--nati-ui-line-height-md);
+}
+
+.natiUiModal [modal-footer] {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--nati-ui-space-2);
+  padding: 0 var(--nati-ui-space-5) var(--nati-ui-space-5);
+}
+
+@keyframes natiUiModalFadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes natiUiModalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+}

@@ -1,0 +1,98 @@
+.natiUiRadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nati-ui-space-2);
+  font-family: var(--nati-ui-font-family);
+}
+
+.natiUiRadioGroupLabel {
+  font-size: var(--nati-ui-font-size-sm);
+  font-weight: var(--nati-ui-font-weight-medium);
+  color: var(--nati-ui-color-neutral-700);
+}
+
+.natiUiRadioGroupItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nati-ui-space-2);
+}
+
+.natiUiRadio {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--nati-ui-space-2);
+  cursor: pointer;
+
+  &.natiUiRadioDisabled {
+    cursor: not-allowed;
+  }
+}
+
+.natiUiRadioInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.natiUiRadioDot {
+  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  background: var(--nati-ui-color-neutral-0);
+  border: 1px solid var(--nati-ui-color-neutral-400);
+  border-radius: var(--nati-ui-radius-full);
+  transition: border-color var(--nati-ui-duration-quick);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--nati-ui-color-basic-fill);
+    border-radius: var(--nati-ui-radius-full);
+    transform: scale(0);
+    transition: transform var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+  }
+}
+
+.natiUiRadioInput:checked + .natiUiRadioDot {
+  border-color: var(--nati-ui-color-basic-fill);
+
+  &::after {
+    transform: scale(1);
+  }
+}
+
+.natiUiRadioInput:focus-visible + .natiUiRadioDot {
+  box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+    color-mix(in srgb, var(--nati-ui-focus-ring-color) 30%, transparent);
+}
+
+.natiUiRadioInput:disabled + .natiUiRadioDot {
+  background: var(--nati-ui-color-neutral-100);
+  border-color: var(--nati-ui-color-neutral-300);
+
+  &::after {
+    background: var(--nati-ui-color-neutral-400);
+  }
+}
+
+.natiUiRadioText {
+  display: flex;
+  flex-direction: column;
+}
+
+.natiUiRadioLabel {
+  font-size: var(--nati-ui-font-size-md);
+  color: var(--nati-ui-color-neutral-900);
+}
+
+.natiUiRadioDescription {
+  font-size: var(--nati-ui-font-size-sm);
+  color: var(--nati-ui-color-neutral-500);
+}

@@ -1,0 +1,133 @@
+:root {
+  --nati-ui-color-basic-50: #f0f9ff;
+  --nati-ui-color-basic-100: #c6e8ff;
+  --nati-ui-color-basic-200: #72c6ff;
+  --nati-ui-color-basic-300: #1fa5ff;
+  --nati-ui-color-basic-400: #0079ca;
+  --nati-ui-color-basic-500: #004777;
+  --nati-ui-color-basic-600: #003e69;
+  --nati-ui-color-basic-700: #00365a;
+  --nati-ui-color-basic-800: #002d4c;
+  --nati-ui-color-basic-900: #00253d;
+
+  --nati-ui-color-trinary-50: #f9faf5;
+  --nati-ui-color-trinary-100: #f8faf3;
+  --nati-ui-color-trinary-200: #f6f8f1;
+  --nati-ui-color-trinary-300: #f5f7ef;
+  --nati-ui-color-trinary-400: #f3f6ec;
+  --nati-ui-color-trinary-500: #f2f5ea;
+  --nati-ui-color-trinary-600: #c6d3a3;
+  --nati-ui-color-trinary-700: #9ab25c;
+  --nati-ui-color-trinary-800: #607035;
+  --nati-ui-color-trinary-900: #242914;
+
+  --nati-ui-color-neutral-0: #ffffff;
+  --nati-ui-color-neutral-50: #f9fafb;
+  --nati-ui-color-neutral-100: #f2f3f5;
+  --nati-ui-color-neutral-200: #e4e6ea;
+  --nati-ui-color-neutral-300: #d0d4db;
+  --nati-ui-color-neutral-400: #9aa1ac;
+  --nati-ui-color-neutral-500: #6b7280;
+  --nati-ui-color-neutral-600: #4b5262;
+  --nati-ui-color-neutral-700: #374151;
+  --nati-ui-color-neutral-800: #232833;
+  --nati-ui-color-neutral-900: #111827;
+
+  --nati-ui-color-danger-50: #fdf2f4;
+  --nati-ui-color-danger-100: #fbe1e7;
+  --nati-ui-color-danger-200: #f6bfcc;
+  --nati-ui-color-danger-300: #f19db2;
+  --nati-ui-color-danger-400: #ec7c97;
+  --nati-ui-color-danger-500: #e75a7c;
+  --nati-ui-color-danger-600: #df214f;
+  --nati-ui-color-danger-700: #a7183b;
+  --nati-ui-color-danger-800: #6e1027;
+  --nati-ui-color-danger-900: #350813;
+  --nati-ui-color-success-500: #1f9d55;
+  --nati-ui-color-warning-500: #d97706;
+
+  --nati-ui-color-basic-fill: var(--nati-ui-color-basic-500);
+  --nati-ui-color-basic-on-fill: #ffffff;
+  --nati-ui-color-danger-fill: var(--nati-ui-color-danger-600);
+  --nati-ui-color-danger-on-fill: #ffffff;
+
+  --nati-ui-focus-ring-color: var(--nati-ui-color-basic-fill);
+  --nati-ui-focus-ring-color-danger: var(--nati-ui-color-danger-500);
+  --nati-ui-focus-ring-width: 3px;
+
+  --nati-ui-font-family:
+    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --nati-ui-font-size-xs: 0.75rem;
+  --nati-ui-font-size-sm: 0.8125rem;
+  --nati-ui-font-size-md: 0.9375rem;
+  --nati-ui-font-size-lg: 1.0625rem;
+  --nati-ui-line-height-md: 1.45;
+  --nati-ui-font-weight-regular: 400;
+  --nati-ui-font-weight-medium: 500;
+  --nati-ui-font-weight-semibold: 600;
+  --nati-ui-font-weight-bold: 700;
+
+  --nati-ui-heading-h1-size: 2.5rem;
+  --nati-ui-heading-h1-line-height: 1.15;
+  --nati-ui-heading-h2-size: 2rem;
+  --nati-ui-heading-h2-line-height: 1.2;
+  --nati-ui-heading-h3-size: 1.5rem;
+  --nati-ui-heading-h3-line-height: 1.25;
+  --nati-ui-heading-h4-size: 1.25rem;
+  --nati-ui-heading-h4-line-height: 1.3;
+  --nati-ui-heading-h5-size: 1.0625rem;
+  --nati-ui-heading-h5-line-height: 1.35;
+  --nati-ui-heading-h6-size: 0.9375rem;
+  --nati-ui-heading-h6-line-height: 1.4;
+  --nati-ui-heading-font-weight: 700;
+
+  --nati-ui-space-1: 0.25rem;
+  --nati-ui-space-2: 0.5rem;
+  --nati-ui-space-3: 0.75rem;
+  --nati-ui-space-4: 1rem;
+  --nati-ui-space-5: 1.25rem;
+  --nati-ui-space-6: 1.5rem;
+
+  --nati-ui-radius-sm: 6px;
+  --nati-ui-radius-md: 8px;
+  --nati-ui-radius-lg: 12px;
+  --nati-ui-radius-full: 999px;
+
+  --nati-ui-duration-quick: 120ms;
+  --nati-ui-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --nati-ui-control-height-sm: 32px;
+  --nati-ui-control-height-md: 44px;
+  --nati-ui-control-padding-x-sm: 0.625rem;
+  --nati-ui-control-padding-x-md: 0.875rem;
+}
+
+@mixin nati-ui-dark-theme {
+  --nati-ui-color-neutral-0: #14161b;
+  --nati-ui-color-neutral-50: #1a1d24;
+  --nati-ui-color-neutral-100: #21252e;
+  --nati-ui-color-neutral-200: #2b303b;
+  --nati-ui-color-neutral-300: #3a4150;
+  --nati-ui-color-neutral-400: #5b6472;
+  --nati-ui-color-neutral-500: #8890a0;
+  --nati-ui-color-neutral-600: #aab1bd;
+  --nati-ui-color-neutral-700: #c7ccd6;
+  --nati-ui-color-neutral-800: #e2e5ea;
+  --nati-ui-color-neutral-900: #f5f6f8;
+  --nati-ui-color-danger-50: #3a1620;
+
+  --nati-ui-color-basic-fill: var(--nati-ui-color-basic-300);
+  --nati-ui-color-basic-on-fill: var(--nati-ui-color-basic-900);
+  --nati-ui-color-danger-fill: var(--nati-ui-color-danger-300);
+  --nati-ui-color-danger-on-fill: var(--nati-ui-color-danger-900);
+}
+
+:root[data-theme='dark'] {
+  @include nati-ui-dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include nati-ui-dark-theme;
+  }
+}

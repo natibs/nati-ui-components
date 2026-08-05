@@ -1,0 +1,36 @@
+.natiUiHeading {
+  margin: 0;
+  font-family: var(--nati-ui-font-family);
+  font-weight: var(--nati-ui-heading-font-weight);
+  color: var(--nati-ui-color-neutral-900);
+
+  &.natiUiHeadingH1 {
+    font-size: var(--nati-ui-heading-h1-size);
+    line-height: var(--nati-ui-heading-h1-line-height);
+  }
+
+  &.natiUiHeadingH2 {
+    font-size: var(--nati-ui-heading-h2-size);
+    line-height: var(--nati-ui-heading-h2-line-height);
+  }
+
+  &.natiUiHeadingH3 {
+    font-size: var(--nati-ui-heading-h3-size);
+    line-height: var(--nati-ui-heading-h3-line-height);
+  }
+
+  &.natiUiHeadingH4 {
+    font-size: var(--nati-ui-heading-h4-size);
+    line-height: var(--nati-ui-heading-h4-line-height);
+  }
+
+  &.natiUiHeadingH5 {
+    font-size: var(--nati-ui-heading-h5-size);
+    line-height: var(--nati-ui-heading-h5-line-height);
+  }
+
+  &.natiUiHeadingH6 {
+    font-size: var(--nati-ui-heading-h6-size);
+    line-height: var(--nati-ui-heading-h6-line-height);
+  }
+}

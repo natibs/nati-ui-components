@@ -1,0 +1,114 @@
+.natiUiBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nati-ui-space-2);
+  height: var(--nati-ui-control-height-md);
+  padding: 0 var(--nati-ui-space-4);
+  font-family: var(--nati-ui-font-family);
+  font-size: var(--nati-ui-font-size-md);
+  font-weight: var(--nati-ui-font-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: var(--nati-ui-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard),
+    border-color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard),
+    color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
+      color-mix(in srgb, var(--nati-ui-focus-ring-color) 30%, transparent);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  &.natiUiBtnSm {
+    height: var(--nati-ui-control-height-sm);
+    padding: 0 var(--nati-ui-space-3);
+    font-size: var(--nati-ui-font-size-sm);
+    border-radius: var(--nati-ui-radius-sm);
+  }
+
+  &.natiUiBtnLg {
+    height: calc(var(--nati-ui-control-height-md) + 8px);
+    padding: 0 var(--nati-ui-space-6);
+    font-size: var(--nati-ui-font-size-lg);
+  }
+
+  &.natiUiBtnPrimary {
+    color: var(--nati-ui-color-basic-on-fill);
+    background: var(--nati-ui-color-basic-fill);
+    border-color: var(--nati-ui-color-basic-fill);
+
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--nati-ui-color-basic-fill) 85%, black);
+      border-color: color-mix(in srgb, var(--nati-ui-color-basic-fill) 85%, black);
+    }
+  }
+
+  &.natiUiBtnSecondary {
+    color: var(--nati-ui-color-basic-700);
+    background: var(--nati-ui-color-trinary-500);
+    border-color: var(--nati-ui-color-trinary-500);
+
+    &:hover:not(:disabled) {
+      background: var(--nati-ui-color-trinary-600);
+      border-color: var(--nati-ui-color-trinary-600);
+    }
+  }
+
+  &.natiUiBtnOutline {
+    color: var(--nati-ui-color-neutral-900);
+    background: var(--nati-ui-color-neutral-0);
+    border-color: var(--nati-ui-color-neutral-300);
+
+    &:hover:not(:disabled) {
+      border-color: var(--nati-ui-color-neutral-500);
+    }
+  }
+
+  &.natiUiBtnDanger {
+    color: var(--nati-ui-color-danger-on-fill);
+    background: var(--nati-ui-color-danger-fill);
+    border-color: var(--nati-ui-color-danger-fill);
+
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--nati-ui-color-danger-fill) 85%, black);
+      border-color: color-mix(in srgb, var(--nati-ui-color-danger-fill) 85%, black);
+    }
+  }
+
+  &.natiUiBtnGhost {
+    color: var(--nati-ui-color-basic-fill);
+    background: transparent;
+    border-color: transparent;
+
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--nati-ui-color-basic-fill) 12%, transparent);
+    }
+  }
+}
+
+.natiUiBtnSpinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: natiUiBtnSpin 0.6s linear infinite;
+}
+
+@keyframes natiUiBtnSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
