@@ -32,6 +32,9 @@ yarn-error.log
 # Claude Code (local-only, machine-specific)
 .claude/settings.local.json
 
+# graphify (generated analysis output)
+/graphify-out
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/
