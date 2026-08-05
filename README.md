@@ -49,6 +49,13 @@ Components (bring their own template/markup):
   your app root — it relocates itself to `document.body` so it always
   renders above everything else. `duration: 0` makes a toast sticky with a
   manual close button.
+- `<nati-ui-typewriter>` — typewriter/running-text effect. Pass a single
+  `text` string to type it out once, or a `string[]` to type each one,
+  pause `pauseTime` ms (default 2000), delete it character by character,
+  and move to the next — looping forever. `fontSize` is configurable too;
+  styled in a monospace typewriter font with a blinking cursor. `color`
+  defaults to `inherit` (follows the surrounding text color) and accepts
+  any CSS color to override it.
 
 ## Styling
 

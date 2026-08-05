@@ -1,0 +1,34 @@
+.natiUiTypewriter {
+  display: inline-flex;
+  align-items: baseline;
+  min-height: 1.45em;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: var(--nati-ui-font-weight-medium);
+  line-height: 1.45;
+  color: inherit;
+  letter-spacing: 0.02em;
+}
+
+.natiUiTypewriterText {
+  white-space: pre-wrap;
+}
+
+.natiUiTypewriterCursor {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1em;
+  margin-left: 2px;
+  background: currentColor;
+  animation: natiUiTypewriterBlink 1s step-end infinite;
+}
+
+@keyframes natiUiTypewriterBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}

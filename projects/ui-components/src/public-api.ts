@@ -16,5 +16,7 @@ export * from './lib/components/datepicker/datepicker.interfaces';
 export * from './lib/components/toast/toast.component';
 export * from './lib/components/toast/toast.service';
 export * from './lib/components/toast/toast.interfaces';
+export * from './lib/components/typewriter/typewriter.component';
+export * from './lib/components/typewriter/typewriter.interfaces';
 
 export * from './lib/utils/control-error.util';
