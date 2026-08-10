@@ -146,8 +146,9 @@ export class NatiUiTextareaDirective implements AfterViewInit, OnDestroy {
   }
 
   private syncPresentation(): void {
+    const message = this.currentErrorMessage();
     if (this.errorEl) {
-      setErrorText(this.renderer, this.errorEl, this.currentErrorMessage());
+      setErrorText(this.renderer, this.errorEl, message);
     }
   }
 }
