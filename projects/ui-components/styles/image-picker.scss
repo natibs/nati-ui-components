@@ -1,0 +1,73 @@
+.natiUiImagePicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--nati-ui-space-2);
+  font-family: var(--nati-ui-font-family);
+}
+
+.natiUiImagePickerAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--nati-ui-color-neutral-400);
+  background: var(--nati-ui-color-neutral-100);
+  border: 1px solid var(--nati-ui-color-neutral-200);
+  border-radius: var(--nati-ui-radius-full);
+
+  &.natiUiImagePickerAvatarSquare {
+    border-radius: var(--nati-ui-radius-lg);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  svg {
+    width: 36%;
+    height: 36%;
+  }
+}
+
+.natiUiImagePickerHiddenInput {
+  display: none;
+}
+
+.natiUiImagePickerActions {
+  display: flex;
+  gap: var(--nati-ui-space-2);
+}
+
+.natiUiImagePickerViewport {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  background: var(--nati-ui-color-neutral-100);
+  border: 1px solid var(--nati-ui-color-neutral-200);
+  border-radius: var(--nati-ui-radius-full);
+
+  &.natiUiImagePickerViewportSquare {
+    border-radius: var(--nati-ui-radius-lg);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.natiUiImagePickerDragImage {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.natiUiImagePickerZoom {
+  width: 100%;
+  max-width: 240px;
+  accent-color: var(--nati-ui-color-basic-fill);
+}

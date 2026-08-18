@@ -56,6 +56,12 @@ Components (bring their own template/markup):
   styled in a monospace typewriter font with a blinking cursor. `color`
   defaults to `inherit` (follows the surrounding text color) and accepts
   any CSS color to override it.
+- `<nati-ui-otp>` — boxed one-time-passcode input, `ControlValueAccessor`.
+  `length` sets the number of boxes (default 6); `charset` is `numeric`
+  (digits only, default) or `alphanumeric` (digits + A-Z, auto-uppercased,
+  no special characters or spaces). Auto-advances as you type, backspace
+  moves to the previous box, arrow keys navigate, and pasting a full code
+  fills every box at once. Emits `complete` once every box is filled.
 
 ## Styling
 

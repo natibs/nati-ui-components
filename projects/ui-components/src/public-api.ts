@@ -20,5 +20,9 @@ export * from './lib/components/menu/menu.component';
 export * from './lib/components/menu/menu.interfaces';
 export * from './lib/components/typewriter/typewriter.component';
 export * from './lib/components/typewriter/typewriter.interfaces';
+export * from './lib/components/image-picker/image-picker.component';
+export * from './lib/components/image-picker/image-picker.interfaces';
+export * from './lib/components/otp/otp.component';
+export * from './lib/components/otp/otp.interfaces';
 
 export * from './lib/utils/control-error.util';
