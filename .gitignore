@@ -30,7 +30,7 @@ yarn-error.log
 .history/*
 
 # Claude Code (local-only, machine-specific)
-.claude/settings.local.json
+.claude/
 
 # graphify (generated analysis output)
 /graphify-out
