@@ -24,5 +24,7 @@ export * from './lib/components/image-picker/image-picker.component';
 export * from './lib/components/image-picker/image-picker.interfaces';
 export * from './lib/components/otp/otp.component';
 export * from './lib/components/otp/otp.interfaces';
+export * from './lib/components/tooltip/tooltip.component';
+export * from './lib/components/tooltip/tooltip.interfaces';
 
 export * from './lib/utils/control-error.util';

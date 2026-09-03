@@ -33,6 +33,13 @@
   --nati-ui-color-neutral-800: #232833;
   --nati-ui-color-neutral-900: #111827;
 
+  // Fixed (theme-invariant) dark-chip colors for floating overlays — toast,
+  // tooltip — that are meant to stay a dark badge for contrast against
+  // either a light or dark page, instead of following the neutral scale
+  // (which intentionally inverts under the dark theme below).
+  --nati-ui-color-chip-bg: #232833;
+  --nati-ui-color-chip-text: #ffffff;
+
   --nati-ui-color-danger-50: #fdf2f4;
   --nati-ui-color-danger-100: #fbe1e7;
   --nati-ui-color-danger-200: #f6bfcc;

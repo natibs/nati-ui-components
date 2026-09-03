@@ -1,0 +1,75 @@
+.natiUiTooltip {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.2em;
+  color: inherit;
+  cursor: help;
+  background: transparent;
+  border-radius: var(--nati-ui-radius-sm);
+  transition: background-color var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+
+  &:hover,
+  &:focus-visible {
+    // Fallback for browsers without color-mix() (Chrome < 111) — the
+    // translucent version below simply overrides it where supported.
+    background: var(--nati-ui-color-info-500);
+    background: color-mix(in srgb, var(--nati-ui-color-info-500) 28%, transparent);
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width) var(--nati-ui-focus-ring-color);
+  }
+}
+
+.natiUiTooltipBubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  z-index: 1000;
+  width: max-content;
+  max-width: 240px;
+  padding: var(--nati-ui-space-2) var(--nati-ui-space-3);
+  font-family: var(--nati-ui-font-family);
+  font-size: var(--nati-ui-font-size-sm);
+  font-weight: var(--nati-ui-font-weight-regular);
+  line-height: var(--nati-ui-line-height-md);
+  color: var(--nati-ui-color-chip-text);
+  text-align: center;
+  pointer-events: auto;
+  cursor: default;
+  background: var(--nati-ui-color-chip-bg);
+  border-radius: var(--nati-ui-radius-md);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+  transform: translateX(-50%);
+  animation: natiUiTooltipPopIn var(--nati-ui-duration-quick) var(--nati-ui-easing-standard);
+
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    content: '';
+    border: 5px solid transparent;
+    border-top-color: var(--nati-ui-color-chip-bg);
+    transform: translateX(-50%);
+  }
+
+  &.natiUiTooltipBubbleBottom {
+    top: calc(100% + 6px);
+    bottom: auto;
+
+    &::after {
+      top: auto;
+      bottom: 100%;
+      border-top-color: transparent;
+      border-bottom-color: var(--nati-ui-color-chip-bg);
+    }
+  }
+}
+
+@keyframes natiUiTooltipPopIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(2px);
+  }
+}

@@ -84,6 +84,9 @@
 
   &:focus-visible {
     outline: none;
+    // Fallback for browsers without color-mix() (Chrome < 111) — the
+    // translucent version below simply overrides it where supported.
+    box-shadow: 0 0 0 var(--nati-ui-focus-ring-width) var(--nati-ui-focus-ring-color);
     box-shadow: 0 0 0 var(--nati-ui-focus-ring-width)
       color-mix(in srgb, var(--nati-ui-focus-ring-color) 30%, transparent);
   }
